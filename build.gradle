@@ -28,8 +28,8 @@ jacoco {
 
 sonarqube {
     properties {
-        property "sonar.projectName", "Java :: Lab1 Project :: SonarQube Scanner for Gradle"
-        property "sonar.projectKey", "org.sonarqube:Lab1"
+        property "sonar.projectName", "Java :: Lab2 Project :: SonarQube Scanner for Gradle"
+        property "sonar.projectKey", "org.sonarqube:Lab2"
         property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
         property "sonar.scm.disabled", "true"
     }
