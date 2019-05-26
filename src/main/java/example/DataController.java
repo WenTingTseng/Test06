@@ -1,53 +1,52 @@
 package main.java.example;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 import main.java.example.Student;
 
 public class DataController {
 
-	Student AllStudent=new Student();
-	School  AllSchool=new School();
-	public LinkedHashMap<String, Integer> getAllStudentGrade(String[] AllName,int[] AllGrades)
+	Student allStudent=new Student();
+	School  allSchool=new School();
+	public LinkedHashMap<String, Integer> getAllStudentGrade(String[] allName,int[] allGrades)
 	{
-		for(int i=0;i<AllName.length;i++)
+		for(int i=0;i<allName.length;i++)
 		{
-			AllStudent.setStudentData(AllName[i],AllGrades[i]);
+			allStudent.setStudentData(allName[i],allGrades[i]);
 		}
 		
-		return AllStudent.getStudentData();
+		return allStudent.getStudentData();
 	}
-	public LinkedHashMap<String,ArrayList<String>> getAllStudentVolunteer(String[] AllName,String[][] school)
+	public LinkedHashMap<String,ArrayList<String>> getAllStudentVolunteer(String[] allName,String[][] school)
 	{
-		for(int i=0;i<AllName.length;i++)
+		for(int i=0;i<allName.length;i++)
 		{
 			ArrayList<String> Schools=new ArrayList<String>();
 			for(int j=0;j<school[i].length;j++)
 			{
 				Schools.add(school[i][j]);
 			}
-			AllStudent.setStudentVolunteer(AllName[i],Schools);
+			allStudent.setStudentVolunteer(allName[i],Schools);
 		}
 		
-		return AllStudent.getStudentVolunteer();
+		return allStudent.getStudentVolunteer();
 	}
 	public LinkedHashMap<String, Integer> getAllSchoolQuota(String[] SchoolName,int[] Quota)
 	{
 		for(int i=0;i<SchoolName.length;i++)
 		{
-			AllSchool.setSchoolQuota(SchoolName[i],Quota[i]);
+			allSchool.setSchoolQuota(SchoolName[i],Quota[i]);
 		}
-		return AllSchool.getSchoolQuota();
+		return allSchool.getSchoolQuota();
 	}
 	public LinkedHashMap<String,Integer> getAllSchoolGrade(String[] SchoolName,int[] SchoolGrades)
 	{
 		for(int i=0;i<SchoolName.length;i++)
 		{
 
-			AllSchool.setSchoolGrade(SchoolName[i],SchoolGrades[i]);
+			allSchool.setSchoolGrade(SchoolName[i],SchoolGrades[i]);
 		}
-		return AllSchool.getSchoolGradeData();
+		return allSchool.getSchoolGradeData();
 	}
 }
