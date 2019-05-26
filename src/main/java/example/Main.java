@@ -7,20 +7,20 @@ public class Main {
 	
 	
 	public static void main() {
-		// TODO Auto-generated method stub
 
-		String[] AllName= {"Wendy","Tony","Jeff"};
-		int[] AllGrades= {74,70,68};
-		String[][] AllVolunteer= {{"台大","成大","中央"},{"成大","中興","中正"},{"中正","中山","逢甲"}};
-		String[] SchoolName= {"台大","成大","中央","中興","中正","中山","逢甲"};
-		int[] Quota= {5,8,4,4,3,3,6};
-		int[] SchoolGrades= {73,70,68,67,65,65,55};
+
+		String[] allName= {"Wendy","Tony","Jeff"};
+		int[] allGrades= {74,70,68};
+		String[][] allVolunteer= {{"台大","成大","中央"},{"成大","中興","中正"},{"中正","中山","逢甲"}};
+		String[] schoolName= {"台大","成大","中央","中興","中正","中山","逢甲"};
+		int[] quota= {5,8,4,4,3,3,6};
+		int[] schoolGrades= {73,70,68,67,65,65,55};
 
 		DataController C=new DataController();
-		LinkedHashMap<String, Integer> Grades=C.getAllStudentGrade(AllName,AllGrades);
-		LinkedHashMap<String,ArrayList<String>> Volunteers=C.getAllStudentVolunteer(AllName,AllVolunteer);
-		LinkedHashMap<String,Integer> AllSchoolQuota=C.getAllSchoolQuota(SchoolName,Quota);
-		LinkedHashMap<String,Integer> AllSchoolGrade=C.getAllSchoolGrade(SchoolName,SchoolGrades);
+		LinkedHashMap<String, Integer> Grades=C.getAllStudentGrade(allName,allGrades);
+		LinkedHashMap<String,ArrayList<String>> Volunteers=C.getAllStudentVolunteer(allName,allVolunteer);
+		LinkedHashMap<String,Integer> AllSchoolQuota=C.getAllSchoolQuota(schoolName,quota);
+		LinkedHashMap<String,Integer> AllSchoolGrade=C.getAllSchoolGrade(schoolName,schoolGrades);
 		int choice;
 		DataCompute d=new DataCompute();
 		Scanner scanner=new Scanner(System.in);
