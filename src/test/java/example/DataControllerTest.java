@@ -38,8 +38,8 @@ public class DataControllerTest {
 	}
 	@Test
 	public void getAllSchoolGradeTest() {
-		String[] SchoolName= {"台大","成大","中央","中興","中正","中山","逢甲"};
-		int[] SchoolGrades= {73,70,68,67,65,65,55};
+		String[] schoolName= {"台大","成大","中央","中興","中正","中山","逢甲"};
+		int[] schoolGrades= {73,70,68,67,65,65,55};
 		HashMap<String, Integer> expected=new HashMap<>();
 		expected.put("台大",73);
 		expected.put("成大",70);
@@ -48,7 +48,7 @@ public class DataControllerTest {
 		expected.put("中正",65);
 		expected.put("中山",65);
 		expected.put("逢甲",55);
-		HashMap<String, Integer> actual=d.getAllSchoolGrade(SchoolName, SchoolGrades);
+		HashMap<String, Integer> actual=d.getAllSchoolGrade(schoolName, schoolGrades);
 		assertEquals(expected, actual);
 	}
 	@Test
@@ -57,21 +57,21 @@ public class DataControllerTest {
 		String[][] allVolunteer= {{"台大","成大","中央"},{"成大","中興","中正"},{"中正","中山","逢甲"}};
 		String[] allName= {"Wendy","Tony","Jeff"};
 		LinkedHashMap<String,ArrayList<String>> expected=new LinkedHashMap<String,ArrayList<String>>();
-		ArrayList<String> wendy_ls = new ArrayList<>();
-		wendy_ls.add("台大");
-		wendy_ls.add("成大");
-		wendy_ls.add("中央");
-		ArrayList<String> tony_ls = new ArrayList<>();
-		tony_ls.add("成大");
-		tony_ls.add("中興");
-		tony_ls.add("中正");
-		ArrayList<String> jeff_ls = new ArrayList<>();
-		jeff_ls.add("中正");
-		jeff_ls.add("中山");
-		jeff_ls.add("逢甲");
-		expected.put("Wendy",wendy_ls);
-		expected.put("Tony",tony_ls);
-		expected.put("Jeff",jeff_ls);
+		ArrayList<String> wendyls = new ArrayList<>();
+		wendyls.add("台大");
+		wendyls.add("成大");
+		wendyls.add("中央");
+		ArrayList<String> tonyls = new ArrayList<>();
+		tonyls.add("成大");
+		tonyls.add("中興");
+		tonyls.add("中正");
+		ArrayList<String> jeffls = new ArrayList<>();
+		jeffls.add("中正");
+		jeffls.add("中山");
+		jeffls.add("逢甲");
+		expected.put("Wendy",wendyls);
+		expected.put("Tony",tonyls);
+		expected.put("Jeff",jeffls);
 		LinkedHashMap<String,ArrayList<String>> actual=d.getAllStudentVolunteer(allName, allVolunteer);
 		assertEquals(expected, actual);
 	}
