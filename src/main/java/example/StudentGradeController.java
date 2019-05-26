@@ -6,11 +6,11 @@ public class StudentGradeController {
 	public ArrayList<Entry<String, Integer>> theSort(Map<String, Integer> grades)
 	{	
 		Map<String, Integer> allStudentGrade=grades;
-		ArrayList<Map.Entry<String,Integer>> list=new ArrayList<>();
-		list.addAll(allStudentGrade.entrySet());
+		ArrayList<Map.Entry<String,Integer>> arraylist=new ArrayList<>();
+		arraylist.addAll(allStudentGrade.entrySet());
 		StudentGradeController.ValueComparator vc=new ValueComparator();
-		Collections.sort(list,vc);
-		return list;
+		Collections.sort(arraylist,vc);
+		return arraylist;
 	}
 	private static class ValueComparator implements Comparator<Map.Entry<String,Integer>>
 	{
