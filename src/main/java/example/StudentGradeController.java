@@ -19,10 +19,10 @@ public class StudentGradeController {
 			return n.getValue()-m.getValue();
 		}
 	}
-	public LinkedHashMap<String, String> checkGrade(ArrayList<Map.Entry<String,Integer>> list,LinkedHashMap<String,ArrayList<String>> volunteers,
+	public Map<String, String> checkGrade(ArrayList<Map.Entry<String,Integer>> list,LinkedHashMap<String,ArrayList<String>> volunteers,
 			LinkedHashMap<String, Integer> grades,LinkedHashMap<String,Integer> allSchoolGrade,LinkedHashMap<String, Integer> allSchoolQuota)
 	{
-		LinkedHashMap<String,String> studentResult=new LinkedHashMap<>();
+		Map<String,String> studentResult=new LinkedHashMap<>();
 		for(Iterator<Map.Entry<String,Integer>> it=list.iterator();it.hasNext();)
 		{
 			String iteratName=it.next().getKey();
