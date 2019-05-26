@@ -3,9 +3,9 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class StudentGradeController {
-	public ArrayList<Entry<String, Integer>> Sort(HashMap<String, Integer> Grades)
+	public ArrayList<Entry<String, Integer>> Sort(Map<String, Integer> Grades)
 	{	
-		HashMap<String, Integer> AllStudentGrade=Grades;
+		Map<String, Integer> AllStudentGrade=Grades;
 		ArrayList<Map.Entry<String,Integer>> list=new ArrayList<>();
 		list.addAll(AllStudentGrade.entrySet());
 		StudentGradeController.ValueComparator vc=new ValueComparator();
