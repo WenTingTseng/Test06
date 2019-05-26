@@ -16,11 +16,11 @@ public class Main {
 		int[] quota= {5,8,4,4,3,3,6};
 		int[] schoolGrades= {73,70,68,67,65,65,55};
 
-		DataController C=new DataController();
-		LinkedHashMap<String, Integer> Grades=C.getAllStudentGrade(allName,allGrades);
-		LinkedHashMap<String,ArrayList<String>> Volunteers=C.getAllStudentVolunteer(allName,allVolunteer);
-		LinkedHashMap<String,Integer> AllSchoolQuota=C.getAllSchoolQuota(schoolName,quota);
-		LinkedHashMap<String,Integer> AllSchoolGrade=C.getAllSchoolGrade(schoolName,schoolGrades);
+		DataController c=new DataController();
+		LinkedHashMap<String, Integer> grades=c.getAllStudentGrade(allName,allGrades);
+		LinkedHashMap<String,ArrayList<String>> volunteers=c.getAllStudentVolunteer(allName,allVolunteer);
+		LinkedHashMap<String,Integer> allSchoolQuota=c.getAllSchoolQuota(schoolName,quota);
+		LinkedHashMap<String,Integer> allSchoolGrade=c.getAllSchoolGrade(schoolName,schoolGrades);
 		int choice;
 		DataCompute d=new DataCompute();
 		Scanner scanner=new Scanner(System.in);
@@ -28,7 +28,7 @@ public class Main {
 		choice=scanner.nextInt();
 		switch(choice){
 			case 1:
-				d.ComputeVolunteer(Volunteers,Grades,AllSchoolGrade,AllSchoolQuota);
+				d.ComputeVolunteer(volunteers,grades,allSchoolGrade,allSchoolQuota);
 				break;
 				
 			case 5:
