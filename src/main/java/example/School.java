@@ -1,28 +1,29 @@
 package main.java.example;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.LinkedHashMap;
 
 public class School {
-	String SchoolName;int Quota;int SchoolGrade;
+	String schoolName;
+	int quota;
+	int schoolGrade;
 	
-	LinkedHashMap<String, Integer> SchoolQutoa= new LinkedHashMap<String, Integer>();
-	LinkedHashMap<String, Integer> SchoolGradeData= new LinkedHashMap<String, Integer>();
-	public void setSchoolQuota(String SchoolName,int Quota)
+	LinkedHashMap<String, Integer> schoolQutoa= new LinkedHashMap<>();
+	LinkedHashMap<String, Integer> schoolGradeData= new LinkedHashMap<>();
+	public void setSchoolQuota(String schoolName,int quota)
 	{
-		SchoolQutoa.put(SchoolName, Quota);
+		schoolQutoa.put(schoolName, quota);
 	}
 	public LinkedHashMap<String, Integer> getSchoolQuota()
 	{
-		return SchoolQutoa;
+		return schoolQutoa;
 	}
-	public void setSchoolGrade(String Name,int SchoolGrade)
+	public void setSchoolGrade(String name,int schoolGrade)
 	{
-		SchoolGradeData.put(Name, SchoolGrade);
+		schoolGradeData.put(name, schoolGrade);
 	}
 	public LinkedHashMap<String,Integer> getSchoolGradeData()
 	{
-		return SchoolGradeData;
+		return schoolGradeData;
 	}
 }
