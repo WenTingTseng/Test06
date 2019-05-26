@@ -29,13 +29,13 @@ public class StudentGradeControllerTest {
 	
 		ArrayList<Entry<String, Integer>> ls=new ArrayList<>();
 		ls.addAll(list.entrySet());
-		HashMap<String, Integer> Grades=new HashMap<>();
-		Grades.put("Wendy", 70);
-		Grades.put("Tom", 72);
-		Grades.put("Jeff", 71);
+		HashMap<String, Integer> grades=new HashMap<>();
+		grades.put("Wendy", 70);
+		grades.put("Tom", 72);
+		grades.put("Jeff", 71);
 	
 	
-		assertEquals(ls,s.Sort(Grades));
+		assertEquals(ls,s.Sort(grades));
 	}
 
 }
