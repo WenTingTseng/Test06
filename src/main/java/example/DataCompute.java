@@ -8,15 +8,14 @@ public class DataCompute {
 	StudentGradeController studentgradecontroller=new StudentGradeController();
 	
 	
-	public LinkedHashMap<String,String> ComputeVolunteer(LinkedHashMap<String,ArrayList<String>> Volunteers,LinkedHashMap<String, Integer> Grades,LinkedHashMap<String,Integer> AllSchoolGrade,
-			LinkedHashMap<String,Integer> AllSchoolQuota){
+	public LinkedHashMap<String,String> ComputeVolunteer(LinkedHashMap<String,ArrayList<String>> volunteers,LinkedHashMap<String, Integer> grades,LinkedHashMap<String,Integer> allSchoolGrade,
+			LinkedHashMap<String,Integer> allSchoolQuota){
 		
-		ArrayList<Map.Entry<String,Integer>> list=studentgradecontroller.theSort(Grades);
-		LinkedHashMap<String,String> StudentResult=new LinkedHashMap<String,String>();
+		ArrayList<Map.Entry<String,Integer>> list=studentgradecontroller.theSort(grades);
+		LinkedHashMap<String,String> studentResult=new LinkedHashMap<String,String>();
 		
-		StudentResult=studentgradecontroller.checkGrade(list, Volunteers, Grades, AllSchoolGrade, AllSchoolQuota);
-		return StudentResult;
-	
+		studentResult=studentgradecontroller.checkGrade(list, volunteers, grades, allSchoolGrade, allSchoolQuota);
+		return studentResult;
 	}
 
 }
