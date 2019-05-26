@@ -3,15 +3,18 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class StudentGradeController {
-	public ArrayList<Entry<String, Integer>> sort(Map<String, Integer> grades)
+	public ArrayList<Entry<String, Integer>> Sort(HashMap<String, Integer> Grades)
 	{	
-		Map<String, Integer> allStudentGrade=grades;
+		HashMap<String, Integer> AllStudentGrade=Grades;
 		ArrayList<Map.Entry<String,Integer>> list=new ArrayList<>();
-		list.addAll(allStudentGrade.entrySet());
+		list.addAll(AllStudentGrade.entrySet());
 		StudentGradeController.ValueComparator vc=new ValueComparator();
 		Collections.sort(list,vc);
 		return list;
-
+//		for(Iterator<Map.Entry<String,Integer>> it=list.iterator();it.hasNext();)
+//		{
+//			System.out.println(it.next());
+//		}
 	}
 	private static class ValueComparator implements Comparator<Map.Entry<String,Integer>>
 	{
