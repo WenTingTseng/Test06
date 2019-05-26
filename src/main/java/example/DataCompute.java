@@ -11,7 +11,7 @@ public class DataCompute {
 	public LinkedHashMap<String,String> ComputeVolunteer(LinkedHashMap<String,ArrayList<String>> Volunteers,LinkedHashMap<String, Integer> Grades,LinkedHashMap<String,Integer> AllSchoolGrade,
 			LinkedHashMap<String,Integer> AllSchoolQuota){
 		
-		ArrayList<Map.Entry<String,Integer>> list=studentgradecontroller.Sort(Grades);
+		ArrayList<Map.Entry<String,Integer>> list=studentgradecontroller.theSort(Grades);
 		LinkedHashMap<String,String> StudentResult=new LinkedHashMap<String,String>();
 		
 		StudentResult=studentgradecontroller.checkGrade(list, Volunteers, Grades, AllSchoolGrade, AllSchoolQuota);
