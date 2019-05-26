@@ -19,16 +19,16 @@ public class StudentGradeController {
 			return n.getValue()-m.getValue();
 		}
 	}
-	public LinkedHashMap<String, String> checkGrade(ArrayList<Map.Entry<String,Integer>> list,LinkedHashMap<String,ArrayList<String>> Volunteers,
-			LinkedHashMap<String, Integer> grades,LinkedHashMap<String,Integer> AllSchoolGrade,LinkedHashMap<String, Integer> allSchoolQuota)
+	public LinkedHashMap<String, String> checkGrade(ArrayList<Map.Entry<String,Integer>> list,LinkedHashMap<String,ArrayList<String>> volunteers,
+			LinkedHashMap<String, Integer> grades,LinkedHashMap<String,Integer> allSchoolGrade,LinkedHashMap<String, Integer> allSchoolQuota)
 	{
-		LinkedHashMap<String,String> studentResult=new LinkedHashMap<String,String>();
+		LinkedHashMap<String,String> studentResult=new LinkedHashMap<>();
 		for(Iterator<Map.Entry<String,Integer>> it=list.iterator();it.hasNext();)
 		{
 			String iteratName=it.next().getKey();
-			for(int i=0;i<Volunteers.values().size();i++) {//
-				String school=Volunteers.get(iteratName).get(i);
-				int schoolGrade=AllSchoolGrade.get(school);
+			for(int i=0;i<volunteers.values().size();i++) {//
+				String school=volunteers.get(iteratName).get(i);
+				int schoolGrade=allSchoolGrade.get(school);
 				 if(grades.get(iteratName)>=schoolGrade){//符合該學校的成績門檻
 					  studentResult.put(iteratName,school);
 					  int oldQuota=allSchoolQuota.get(school);
