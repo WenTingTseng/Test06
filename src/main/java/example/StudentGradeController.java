@@ -6,11 +6,11 @@ public class StudentGradeController {
 	public ArrayList<Entry<String, Integer>> theSort(Map<String, Integer> grades)
 	{	
 		Map<String, Integer> allStudentGrade=grades;
-		ArrayList<Map.Entry<String,Integer>> arraylist=new ArrayList<>();
-		arraylist.addAll(allStudentGrade.entrySet());
+		ArrayList<Map.Entry<String,Integer>> list=new ArrayList<>();
+		list.addAll(allStudentGrade.entrySet());
 		StudentGradeController.ValueComparator vc=new ValueComparator();
-		Collections.sort(arraylist,vc);
-		return arraylist;
+		Collections.sort(list,vc);
+		return list;
 	}
 	private static class ValueComparator implements Comparator<Map.Entry<String,Integer>>
 	{
@@ -20,17 +20,17 @@ public class StudentGradeController {
 		}
 	}
 	public LinkedHashMap<String, String> checkGrade(ArrayList<Map.Entry<String,Integer>> list,LinkedHashMap<String,ArrayList<String>> Volunteers,
-			LinkedHashMap<String, Integer> Grades,LinkedHashMap<String,Integer> AllSchoolGrade,LinkedHashMap<String, Integer> allSchoolQuota)
+			LinkedHashMap<String, Integer> grades,LinkedHashMap<String,Integer> AllSchoolGrade,LinkedHashMap<String, Integer> allSchoolQuota)
 	{
-		LinkedHashMap<String,String> StudentResult=new LinkedHashMap<String,String>();
+		LinkedHashMap<String,String> studentResult=new LinkedHashMap<String,String>();
 		for(Iterator<Map.Entry<String,Integer>> it=list.iterator();it.hasNext();)
 		{
 			String iteratName=it.next().getKey();
 			for(int i=0;i<Volunteers.values().size();i++) {//
 				String school=Volunteers.get(iteratName).get(i);
-				int SchoolGrade=AllSchoolGrade.get(school);
-				 if(Grades.get(iteratName)>=SchoolGrade){//符合該學校的成績門檻
-					  StudentResult.put(iteratName,school);
+				int schoolGrade=AllSchoolGrade.get(school);
+				 if(grades.get(iteratName)>=schoolGrade){//符合該學校的成績門檻
+					  studentResult.put(iteratName,school);
 					  int oldQuota=allSchoolQuota.get(school);
 					  int newQuota=allSchoolQuota.get(school)-1;
 					  allSchoolQuota.replace(iteratName, oldQuota,newQuota);
@@ -38,6 +38,6 @@ public class StudentGradeController {
 				  }
 			}
 		}
-		return StudentResult;
+		return studentResult;
 	}
 }
