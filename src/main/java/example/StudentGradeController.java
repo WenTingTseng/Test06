@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class StudentGradeController {
-	public ArrayList<Entry<String, Integer>> Sort(Map<String, Integer> Grades)
+	public ArrayList<Entry<String, Integer>> theSort(Map<String, Integer> Grades)
 	{	
 		Map<String, Integer> AllStudentGrade=Grades;
 		ArrayList<Map.Entry<String,Integer>> list=new ArrayList<>();
