@@ -12,7 +12,7 @@ public class DataCompute {
 			LinkedHashMap<String,Integer> allSchoolQuota){
 		
 		ArrayList<Map.Entry<String,Integer>> list=studentgradecontroller.theSort(grades);
-		LinkedHashMap<String,String> studentResult=new LinkedHashMap<String,String>();
+		LinkedHashMap<String,String> studentResult=new LinkedHashMap<>();
 		
 		studentResult=studentgradecontroller.checkGrade(list, volunteers, grades, allSchoolGrade, allSchoolQuota);
 		return studentResult;
