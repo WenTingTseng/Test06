@@ -3,18 +3,14 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class StudentGradeController {
-	public ArrayList<Entry<String, Integer>> Sort(Map<String, Integer> Grades)
+	public ArrayList<Entry<String, Integer>> sort(Map<String, Integer> grades)
 	{	
-		Map<String, Integer> AllStudentGrade=Grades;
+		Map<String, Integer> allStudentGrade=grades;
 		ArrayList<Map.Entry<String,Integer>> list=new ArrayList<>();
-		list.addAll(AllStudentGrade.entrySet());
+		list.addAll(allStudentGrade.entrySet());
 		StudentGradeController.ValueComparator vc=new ValueComparator();
 		Collections.sort(list,vc);
 		return list;
-//		for(Iterator<Map.Entry<String,Integer>> it=list.iterator();it.hasNext();)
-//		{
-//			System.out.println(it.next());
-//		}
 	}
 	private static class ValueComparator implements Comparator<Map.Entry<String,Integer>>
 	{

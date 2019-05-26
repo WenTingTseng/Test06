@@ -35,7 +35,7 @@ public class StudentGradeControllerTest {
 		grades.put("Jeff", 71);
 	
 	
-		assertEquals(ls,s.Sort(grades));
+		assertEquals(ls,s.sort(grades));
 	}
 
 }
