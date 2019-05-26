@@ -17,6 +17,7 @@ public class DataControllerTest {
 	DataController d;
 	StudentGradeController s;
 	DataCompute c;
+	String Name="Wendy";
 	@Before
 	public void setUp() {
 		d=new DataController();
@@ -26,10 +27,11 @@ public class DataControllerTest {
 
 	@Test
 	public void getAllStudentGradeTest() {
-		String[] allName={"Wendy","Tony","Jeff"};
+		
+		String[] allName={Name,"Tony","Jeff"};
 		int[] allGrades={74,70,68};
 		HashMap<String, Integer> expected=new HashMap<>();
-		expected.put("Wendy",74);
+		expected.put(Name,74);
 		expected.put("Tony", 70);
 		expected.put("Jeff",68);
 
@@ -55,7 +57,7 @@ public class DataControllerTest {
 	public void getAllStudentVolunteerTest()
 	{
 		String[][] allVolunteer= {{"台大","成大","中央"},{"成大","中興","中正"},{"中正","中山","逢甲"}};
-		String[] allName= {"Wendy","Tony","Jeff"};
+		String[] allName= {Name,"Tony","Jeff"};
 		LinkedHashMap<String,ArrayList<String>> expected=new LinkedHashMap<String,ArrayList<String>>();
 		ArrayList<String> wendyls = new ArrayList<>();
 		wendyls.add("台大");
@@ -69,7 +71,7 @@ public class DataControllerTest {
 		jeffls.add("中正");
 		jeffls.add("中山");
 		jeffls.add("逢甲");
-		expected.put("Wendy",wendyls);
+		expected.put(Name,wendyls);
 		expected.put("Tony",tonyls);
 		expected.put("Jeff",jeffls);
 		LinkedHashMap<String,ArrayList<String>> actual=d.getAllStudentVolunteer(allName, allVolunteer);
