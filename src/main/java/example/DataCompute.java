@@ -22,19 +22,19 @@ public class DataCompute {
 			LinkedHashMap<String,Integer> allSchoolQuota){
 		DataCompute d=new DataCompute(); 
 		
-		LinkedHashMap<String,Integer> OldAllSchoolQuota=(LinkedHashMap<String, Integer>) allSchoolQuota.clone();
+		LinkedHashMap<String,Integer> oldAllSchoolQuota=(LinkedHashMap<String, Integer>) allSchoolQuota.clone();
 		
 		d.computeVolunteer(volunteers,grades,allSchoolGrade,allSchoolQuota);
-		LinkedHashMap<String,Integer> NewAllSchoolQuota=allSchoolQuota;
+		LinkedHashMap<String,Integer> newAllSchoolQuota=allSchoolQuota;
 		
 		LinkedHashMap<String,String> Rate=new LinkedHashMap<String,String>();
-		 for (Object key1 : OldAllSchoolQuota.keySet()) {
-	            //System.out.println(key1 + " : " + OldAllSchoolQuota.get(key1));
-	            for(Object key2 : NewAllSchoolQuota.keySet())
+		 for (Object key1 : oldAllSchoolQuota.keySet()) {
+	          
+	            for(Object key2 : newAllSchoolQuota.keySet())
 	            {
 	            	if(key1==key2) {
 	            		DecimalFormat df = new DecimalFormat("0.00%");
-	            		String rate=df.format((double)(OldAllSchoolQuota.get(key1)-NewAllSchoolQuota.get(key2))/OldAllSchoolQuota.get(key1));
+	            		String rate=df.format((double)(oldAllSchoolQuota.get(key1)-newAllSchoolQuota.get(key2))/oldAllSchoolQuota.get(key1));
 	            		Rate.put((String) key1, rate);
 	            	}
 	            }
