@@ -36,13 +36,13 @@ public class School {
 			schoolGrade=68;
 		}
 		else if(name=="中興") {
-			schoolGrade=67;
+			schoolGrade=65;
 		}
 		else if(name=="中正") {
-			schoolGrade=65;
+			schoolGrade=63;
 		}
 		else if(name=="中山") {
-			schoolGrade=65;
+			schoolGrade=63;
 		}
 		else if(name=="輔大") {
 			schoolGrade=58;

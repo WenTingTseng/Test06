@@ -53,14 +53,14 @@ public class DataControllerTest {
 	}
 	@Test
 	public void getAllSchoolGradeTest() {
-		String[] schoolName= {"台大","成大","中央","中興","中正","中山","逢甲"};
+		String[] schoolName= {"台大","成大","中央","中興","中正","中山","逢甲"};//,
 		HashMap<String, Integer> expected=new HashMap<>();
 		expected.put("台大",73);
 		expected.put("成大",70);
 		expected.put("中央",68);
-		expected.put("中興",67);
-		expected.put("中正",65);
-		expected.put("中山",65);
+		expected.put("中興",65);
+		expected.put("中正",63);
+		expected.put("中山",63);
 		expected.put("逢甲",55);
 		HashMap<String, Integer> actual=d.getAllSchoolGrade(schoolName);
 		assertEquals(expected, actual);

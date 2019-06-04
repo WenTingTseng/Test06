@@ -109,4 +109,60 @@ public class DataComputeTest {
 		LinkedHashMap<String,String> actual=c.ComputeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
 		assertEquals(actual,expected);
 	}
+	@Test
+	public void computeRateTest2() {
+		String[] allName= {"王曉明","曾筱婷","甘柔"};
+		int[] allGrades= {75,56,68};
+		String[][] allVolunteer= {{"台大","交大","清大"},{"輔大","逢甲","中原"},{"中央","中興","中山"}};
+		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};;
+		int[] quota= {5,5,3,8,4,4,3,3,6,6,5};
+
+		LinkedHashMap<String, Integer> grades=d.getAllStudentGrade(allName,allGrades);
+		LinkedHashMap<String,ArrayList<String>> volunteers=d.getAllStudentVolunteer(allName,allVolunteer);
+		LinkedHashMap<String,Integer> allSchoolQuota=d.getAllSchoolQuota(schoolName,quota);
+		LinkedHashMap<String,Integer> allSchoolGrade=d.getAllSchoolGrade(schoolName);
+		
+		LinkedHashMap<String,String> expected=new LinkedHashMap<>();
+		expected.put("台大","20.00%");
+		expected.put("交大","0.00%");
+		expected.put("清大","0.00%");
+		expected.put("成大","0.00%");
+		expected.put("中央","25.00%");
+		expected.put("中興","0.00%");
+		expected.put("中正","0.00%");
+		expected.put("中山","0.00%");
+		expected.put("逢甲","16.67%");
+		expected.put("輔大","0.00%");
+		expected.put("中原","0.00%");
+		LinkedHashMap<String,String> actual=c.ComputeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
+		assertEquals(actual,expected);
+	}
+	@Test
+	public void computeRateTest3() {
+		String[] allName= {"周湯豪","韓國瑜","李秉乾"};
+		int[] allGrades= {73,53,71};
+		String[][] allVolunteer= {{"中正","逢甲","輔大"},{"輔大","逢甲","中原"},{"清大","交大","成大"}};
+		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};;
+		int[] quota= {5,5,3,8,4,4,3,3,6,6,5};
+
+		LinkedHashMap<String, Integer> grades=d.getAllStudentGrade(allName,allGrades);
+		LinkedHashMap<String,ArrayList<String>> volunteers=d.getAllStudentVolunteer(allName,allVolunteer);
+		LinkedHashMap<String,Integer> allSchoolQuota=d.getAllSchoolQuota(schoolName,quota);
+		LinkedHashMap<String,Integer> allSchoolGrade=d.getAllSchoolGrade(schoolName);
+		
+		LinkedHashMap<String,String> expected=new LinkedHashMap<>();
+		LinkedHashMap<String,String> actual=c.ComputeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
+		expected.put("台大","0.00%");
+		expected.put("交大","20.00%");
+		expected.put("清大","0.00%");
+		expected.put("成大","0.00%");
+		expected.put("中央","0.00%");
+		expected.put("中興","0.00%");
+		expected.put("中正","33.33%");
+		expected.put("中山","0.00%");
+		expected.put("逢甲","0.00%");
+		expected.put("輔大","0.00%");
+		expected.put("中原","20.00%");
+		assertEquals(actual,expected);
+	}
 }
