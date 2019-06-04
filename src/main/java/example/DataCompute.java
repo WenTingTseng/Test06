@@ -9,7 +9,7 @@ public class DataCompute {
 	StudentGradeController studentgradecontroller=new StudentGradeController();
 	
 	
-	public LinkedHashMap<String,String> ComputeVolunteer(LinkedHashMap<String,ArrayList<String>> volunteers,LinkedHashMap<String, Integer> grades,LinkedHashMap<String,Integer> allSchoolGrade,
+	public LinkedHashMap<String,String> computeVolunteer(LinkedHashMap<String,ArrayList<String>> volunteers,LinkedHashMap<String, Integer> grades,LinkedHashMap<String,Integer> allSchoolGrade,
 			LinkedHashMap<String,Integer> allSchoolQuota){
 		
 		ArrayList<Map.Entry<String,Integer>> list=studentgradecontroller.theSort(grades);
@@ -18,13 +18,13 @@ public class DataCompute {
 		studentResult=studentgradecontroller.checkGrade(list, volunteers, grades, allSchoolGrade, allSchoolQuota);
 		return studentResult;
 	}
-	public LinkedHashMap<String, String> ComputeRate(LinkedHashMap<String,ArrayList<String>> volunteers,LinkedHashMap<String, Integer> grades,LinkedHashMap<String,Integer> allSchoolGrade,
+	public LinkedHashMap<String, String> computeRate(LinkedHashMap<String,ArrayList<String>> volunteers,LinkedHashMap<String, Integer> grades,LinkedHashMap<String,Integer> allSchoolGrade,
 			LinkedHashMap<String,Integer> allSchoolQuota){
 		DataCompute d=new DataCompute(); 
 		
 		LinkedHashMap<String,Integer> OldAllSchoolQuota=(LinkedHashMap<String, Integer>) allSchoolQuota.clone();
 		
-		d.ComputeVolunteer(volunteers,grades,allSchoolGrade,allSchoolQuota);
+		d.computeVolunteer(volunteers,grades,allSchoolGrade,allSchoolQuota);
 		LinkedHashMap<String,Integer> NewAllSchoolQuota=allSchoolQuota;
 		
 		LinkedHashMap<String,String> Rate=new LinkedHashMap<String,String>();

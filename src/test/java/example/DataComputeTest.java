@@ -40,7 +40,7 @@ public class DataComputeTest {
 		expected.put(name,"台大");
 		expected.put("Tony","成大");
 		expected.put("Jeff","中正");
-		LinkedHashMap<String,String> actual=c.ComputeVolunteer(volunteers, grades, allSchoolGrade, allSchoolQuota);
+		LinkedHashMap<String,String> actual=c.computeVolunteer(volunteers, grades, allSchoolGrade, allSchoolQuota);
 		assertEquals(actual,expected);
 	}
 	@Test
@@ -61,7 +61,7 @@ public class DataComputeTest {
 		expected.put("王曉明","台大");
 		expected.put("甘柔","中央");
 		expected.put("曾筱婷","逢甲");
-		LinkedHashMap<String,String> actual=c.ComputeVolunteer(volunteers, grades, allSchoolGrade, allSchoolQuota);
+		LinkedHashMap<String,String> actual=c.computeVolunteer(volunteers, grades, allSchoolGrade, allSchoolQuota);
 		assertEquals(actual,expected);
 	}
 	@Test
@@ -82,7 +82,7 @@ public class DataComputeTest {
 		expected.put("周湯豪","中正");
 		expected.put("李秉乾","交大");
 		expected.put("韓國瑜","中原");
-		LinkedHashMap<String,String> actual=c.ComputeVolunteer(volunteers, grades, allSchoolGrade, allSchoolQuota);
+		LinkedHashMap<String,String> actual=c.computeVolunteer(volunteers, grades, allSchoolGrade, allSchoolQuota);
 		assertEquals(actual,expected);
 	}
 	@Test
@@ -107,7 +107,7 @@ public class DataComputeTest {
 		expected.put("中山","0.00%");
 		expected.put("逢甲","0.00%");
 		
-		LinkedHashMap<String,String> actual=c.ComputeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
+		LinkedHashMap<String,String> actual=c.computeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
 		assertEquals(actual,expected);
 	}
 	@Test
@@ -135,7 +135,7 @@ public class DataComputeTest {
 		expected.put("逢甲","16.67%");
 		expected.put("輔大","0.00%");
 		expected.put("中原","0.00%");
-		LinkedHashMap<String,String> actual=c.ComputeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
+		LinkedHashMap<String,String> actual=c.computeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
 		assertEquals(actual,expected);
 	}
 	@Test
@@ -152,7 +152,7 @@ public class DataComputeTest {
 		LinkedHashMap<String,Integer> allSchoolGrade=d.getAllSchoolGrade(schoolName);
 		
 		LinkedHashMap<String,String> expected=new LinkedHashMap<>();
-		LinkedHashMap<String,String> actual=c.ComputeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
+		LinkedHashMap<String,String> actual=c.computeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
 		expected.put("台大","0.00%");
 		expected.put("交大","20.00%");
 		expected.put("清大","0.00%");

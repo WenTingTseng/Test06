@@ -30,7 +30,7 @@ public class Main {
 			switch(choice){
 			case 1:
 				System.out.println("*****************榜單***************");
-				LinkedHashMap<String,String> volu=d.ComputeVolunteer(volunteers,grades,allSchoolGrade,allSchoolQuota);
+				LinkedHashMap<String,String> volu=d.computeVolunteer(volunteers,grades,allSchoolGrade,allSchoolQuota);
 				for (Object key : volu.keySet()) {
 					 System.out.println(key + " : " + volu.get(key));
 				}
@@ -39,7 +39,7 @@ public class Main {
 			case 2:
 				
 				System.out.println("*********************錄取率**************");
-				LinkedHashMap<String,String> rate=d.ComputeRate(volunteers,grades,allSchoolGrade,allSchoolQuota);
+				LinkedHashMap<String,String> rate=d.computeRate(volunteers,grades,allSchoolGrade,allSchoolQuota);
 				for (Object key : rate.keySet()) {
 					 System.out.println(key + " : " + rate.get(key));
 				}
