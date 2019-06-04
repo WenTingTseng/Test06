@@ -29,7 +29,6 @@ public class Main {
 			choice=scanner.nextInt();
 			switch(choice){
 			case 1:
-			//	System.out.println(d.ComputeVolunteer(volunteers,grades,allSchoolGrade,allSchoolQuota));
 				System.out.println("*****************榜單***************");
 				LinkedHashMap<String,String> volu=d.ComputeVolunteer(volunteers,grades,allSchoolGrade,allSchoolQuota);
 				for (Object key : volu.keySet()) {
@@ -38,7 +37,7 @@ public class Main {
 				System.out.println("*************************************");
 				break;
 			case 2:
-				//System.out.println(d.ComputeRate(volunteers,grades,allSchoolGrade,allSchoolQuota));
+				
 				System.out.println("*********************錄取率**************");
 				LinkedHashMap<String,String> rate=d.ComputeRate(volunteers,grades,allSchoolGrade,allSchoolQuota);
 				for (Object key : rate.keySet()) {
@@ -57,5 +56,4 @@ public class Main {
 			}
 		}
 	}
-	
 }
