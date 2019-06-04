@@ -92,7 +92,7 @@ public class DataComputeTest {
 		String[][] allVolunteer= {{"台大","成大","中央"},{"成大","中興","中正"},{"中正","中山","逢甲"}};
 		String[] schoolName= {"台大","成大","中央","中興","中正","中山","逢甲"};
 		int[] quota= {5,8,4,4,3,3,6};
-
+		String zero="0.00%";
 		LinkedHashMap<String, Integer> grades=d.getAllStudentGrade(allName,allGrades);
 		LinkedHashMap<String,ArrayList<String>> volunteers=d.getAllStudentVolunteer(allName,allVolunteer);
 		LinkedHashMap<String,Integer> allSchoolQuota=d.getAllSchoolQuota(schoolName,quota);
@@ -101,11 +101,11 @@ public class DataComputeTest {
 		LinkedHashMap<String,String> expected=new LinkedHashMap<>();
 		expected.put("台大","20.00%");
 		expected.put("成大","12.50%");
-		expected.put("中央","0.00%");
-		expected.put("中興","0.00%");
+		expected.put("中央",zero);
+		expected.put("中興",zero);
 		expected.put("中正","33.33%");
-		expected.put("中山","0.00%");
-		expected.put("逢甲","0.00%");
+		expected.put("中山",zero);
+		expected.put("逢甲",zero);
 		
 		LinkedHashMap<String,String> actual=c.computeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
 		assertEquals(actual,expected);
@@ -117,7 +117,8 @@ public class DataComputeTest {
 		String[][] allVolunteer= {{"台大","交大","清大"},{"輔大","逢甲","中原"},{"中央","中興","中山"}};
 		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};
 		int[] quota= {5,5,3,8,4,4,3,3,6,6,5};
-
+		String zero="0.00%";
+		
 		LinkedHashMap<String, Integer> grades=d.getAllStudentGrade(allName,allGrades);
 		LinkedHashMap<String,ArrayList<String>> volunteers=d.getAllStudentVolunteer(allName,allVolunteer);
 		LinkedHashMap<String,Integer> allSchoolQuota=d.getAllSchoolQuota(schoolName,quota);
@@ -125,16 +126,16 @@ public class DataComputeTest {
 		
 		LinkedHashMap<String,String> expected=new LinkedHashMap<>();
 		expected.put("台大","20.00%");
-		expected.put("交大","0.00%");
-		expected.put("清大","0.00%");
-		expected.put("成大","0.00%");
+		expected.put("交大",zero);
+		expected.put("清大",zero);
+		expected.put("成大",zero);
 		expected.put("中央","25.00%");
-		expected.put("中興","0.00%");
-		expected.put("中正","0.00%");
-		expected.put("中山","0.00%");
+		expected.put("中興",zero);
+		expected.put("中正",zero);
+		expected.put("中山",zero);
 		expected.put("逢甲","16.67%");
-		expected.put("輔大","0.00%");
-		expected.put("中原","0.00%");
+		expected.put("輔大",zero);
+		expected.put("中原",zero);
 		LinkedHashMap<String,String> actual=c.computeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
 		assertEquals(actual,expected);
 	}
@@ -145,7 +146,8 @@ public class DataComputeTest {
 		String[][] allVolunteer= {{"中正","逢甲","輔大"},{"輔大","逢甲","中原"},{"清大","交大","成大"}};
 		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};
 		int[] quota= {5,5,3,8,4,4,3,3,6,6,5};
-
+		String zero="0.00%";
+		
 		LinkedHashMap<String, Integer> grades=d.getAllStudentGrade(allName,allGrades);
 		LinkedHashMap<String,ArrayList<String>> volunteers=d.getAllStudentVolunteer(allName,allVolunteer);
 		LinkedHashMap<String,Integer> allSchoolQuota=d.getAllSchoolQuota(schoolName,quota);
@@ -153,16 +155,16 @@ public class DataComputeTest {
 		
 		LinkedHashMap<String,String> expected=new LinkedHashMap<>();
 		LinkedHashMap<String,String> actual=c.computeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
-		expected.put("台大","0.00%");
+		expected.put("台大",zero);
 		expected.put("交大","20.00%");
-		expected.put("清大","0.00%");
-		expected.put("成大","0.00%");
-		expected.put("中央","0.00%");
-		expected.put("中興","0.00%");
+		expected.put("清大",zero);
+		expected.put("成大",zero);
+		expected.put("中央",zero);
+		expected.put("中興",zero);
 		expected.put("中正","33.33%");
-		expected.put("中山","0.00%");
-		expected.put("逢甲","0.00%");
-		expected.put("輔大","0.00%");
+		expected.put("中山",zero);
+		expected.put("逢甲",zero);
+		expected.put("輔大",zero);
 		expected.put("中原","20.00%");
 		assertEquals(actual,expected);
 	}
