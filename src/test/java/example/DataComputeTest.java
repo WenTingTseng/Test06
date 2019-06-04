@@ -49,7 +49,7 @@ public class DataComputeTest {
 		String[] allName= {"王曉明","曾筱婷","甘柔"};
 		int[] allGrades= {75,56,68};
 		String[][] allVolunteer= {{"台大","交大","清大"},{"輔大","逢甲","中原"},{"中央","中興","中山"}};
-		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};;
+		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};
 		int[] quota= {5,5,3,8,4,4,3,3,6,6,5};
 
 		LinkedHashMap<String, Integer> grades=d.getAllStudentGrade(allName,allGrades);
@@ -70,7 +70,7 @@ public class DataComputeTest {
 		String[] allName= {"周湯豪","韓國瑜","李秉乾"};
 		int[] allGrades= {73,53,71};
 		String[][] allVolunteer= {{"中正","逢甲","輔大"},{"輔大","逢甲","中原"},{"清大","交大","成大"}};
-		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};;
+		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};
 		int[] quota= {5,5,3,8,4,4,3,3,6,6,5};
 
 		LinkedHashMap<String, Integer> grades=d.getAllStudentGrade(allName,allGrades);
@@ -115,7 +115,7 @@ public class DataComputeTest {
 		String[] allName= {"王曉明","曾筱婷","甘柔"};
 		int[] allGrades= {75,56,68};
 		String[][] allVolunteer= {{"台大","交大","清大"},{"輔大","逢甲","中原"},{"中央","中興","中山"}};
-		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};;
+		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};
 		int[] quota= {5,5,3,8,4,4,3,3,6,6,5};
 
 		LinkedHashMap<String, Integer> grades=d.getAllStudentGrade(allName,allGrades);
@@ -143,7 +143,7 @@ public class DataComputeTest {
 		String[] allName= {"周湯豪","韓國瑜","李秉乾"};
 		int[] allGrades= {73,53,71};
 		String[][] allVolunteer= {{"中正","逢甲","輔大"},{"輔大","逢甲","中原"},{"清大","交大","成大"}};
-		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};;
+		String[] schoolName= {"台大","交大","清大","成大","中央","中興","中正","中山","逢甲","輔大","中原"};
 		int[] quota= {5,5,3,8,4,4,3,3,6,6,5};
 
 		LinkedHashMap<String, Integer> grades=d.getAllStudentGrade(allName,allGrades);
