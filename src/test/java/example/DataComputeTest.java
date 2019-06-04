@@ -24,7 +24,8 @@ public class DataComputeTest {
 	@Test
 	public void computeVolunteerTest1()
 	{
-		String[] allName= {"Wendy","Tony","Jeff"};
+		String name="Wendy";
+		String[] allName= {name,"Tony","Jeff"};
 		int[] allGrades= {74,70,68};
 		String[][] allVolunteer= {{"台大","成大","中央"},{"成大","中興","中正"},{"中正","中山","逢甲"}};
 		String[] schoolName= {"台大","成大","中央","中興","中正","中山","逢甲"};
@@ -36,7 +37,7 @@ public class DataComputeTest {
 		LinkedHashMap<String,Integer> allSchoolGrade=d.getAllSchoolGrade(schoolName);
 		
 		LinkedHashMap<String,String> expected=new LinkedHashMap<>();
-		expected.put("Wendy","台大");
+		expected.put(name,"台大");
 		expected.put("Tony","成大");
 		expected.put("Jeff","中正");
 		LinkedHashMap<String,String> actual=c.ComputeVolunteer(volunteers, grades, allSchoolGrade, allSchoolQuota);
