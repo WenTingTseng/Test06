@@ -40,12 +40,12 @@ public class DataController {
 		}
 		return allSchool.getSchoolQuota();
 	}
-	public LinkedHashMap<String,Integer> getAllSchoolGrade(String[] schoolName,int[] schoolGrades)
+	public LinkedHashMap<String,Integer> getAllSchoolGrade(String[] schoolName)
 	{
 		for(int i=0;i<schoolName.length;i++)
 		{
 
-			allSchool.setSchoolGrade(schoolName[i],schoolGrades[i]);
+			allSchool.setSchoolGrade(schoolName[i]);
 		}
 		return allSchool.getSchoolGradeData();
 	}

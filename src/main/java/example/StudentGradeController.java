@@ -23,17 +23,19 @@ public class StudentGradeController {
 			LinkedHashMap<String, Integer> grades,LinkedHashMap<String,Integer> allSchoolGrade,LinkedHashMap<String, Integer> allSchoolQuota)
 	{
 		LinkedHashMap<String,String> studentResult=new LinkedHashMap<>();
+		
 		for(Iterator<Map.Entry<String,Integer>> it=list.iterator();it.hasNext();)
 		{
 			String iteratName=it.next().getKey();
-			for(int i=0;i<volunteers.values().size();i++) {//
+			for(int i=0;i<volunteers.values().size();i++) {
 				String school=volunteers.get(iteratName).get(i);
 				int schoolGrade=allSchoolGrade.get(school);
 				 if(grades.get(iteratName)>=schoolGrade){//符合該學校的成績門檻
 					  studentResult.put(iteratName,school);
 					  int oldQuota=allSchoolQuota.get(school);
 					  int newQuota=allSchoolQuota.get(school)-1;
-					  allSchoolQuota.replace(iteratName, oldQuota,newQuota);
+					  allSchoolQuota.put(school, newQuota);
+				     // System.out.println(allSchoolQuota);
 					  break;
 				  }
 			}
