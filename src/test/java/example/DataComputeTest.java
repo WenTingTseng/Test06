@@ -84,4 +84,29 @@ public class DataComputeTest {
 		LinkedHashMap<String,String> actual=c.ComputeVolunteer(volunteers, grades, allSchoolGrade, allSchoolQuota);
 		assertEquals(actual,expected);
 	}
+	@Test
+	public void computeRateTest1() {
+		String[] allName= {"Wendy","Tony","Jeff"};
+		int[] allGrades= {74,70,68};
+		String[][] allVolunteer= {{"台大","成大","中央"},{"成大","中興","中正"},{"中正","中山","逢甲"}};
+		String[] schoolName= {"台大","成大","中央","中興","中正","中山","逢甲"};
+		int[] quota= {5,8,4,4,3,3,6};
+
+		LinkedHashMap<String, Integer> grades=d.getAllStudentGrade(allName,allGrades);
+		LinkedHashMap<String,ArrayList<String>> volunteers=d.getAllStudentVolunteer(allName,allVolunteer);
+		LinkedHashMap<String,Integer> allSchoolQuota=d.getAllSchoolQuota(schoolName,quota);
+		LinkedHashMap<String,Integer> allSchoolGrade=d.getAllSchoolGrade(schoolName);
+		
+		LinkedHashMap<String,String> expected=new LinkedHashMap<>();
+		expected.put("台大","20.00%");
+		expected.put("成大","12.50%");
+		expected.put("中央","0.00%");
+		expected.put("中興","0.00%");
+		expected.put("中正","33.33%");
+		expected.put("中山","0.00%");
+		expected.put("逢甲","0.00%");
+		
+		LinkedHashMap<String,String> actual=c.ComputeRate(volunteers, grades, allSchoolGrade, allSchoolQuota);
+		assertEquals(actual,expected);
+	}
 }

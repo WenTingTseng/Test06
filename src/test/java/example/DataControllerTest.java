@@ -26,7 +26,7 @@ public class DataControllerTest {
 	}
 
 	@Test
-	public void getAllStudentGradeTest() {
+	public void getAllStudentGradeTest1() {
 		
 		String[] allName={name,"Tony","Jeff"};
 		int[] allGrades={74,70,68};
@@ -34,6 +34,19 @@ public class DataControllerTest {
 		expected.put(name,74);
 		expected.put("Tony", 70);
 		expected.put("Jeff",68);
+
+		HashMap<String, Integer> actual=d.getAllStudentGrade(allName, allGrades);
+		assertEquals(expected, actual);
+	}
+	@Test
+	public void getAllStudentGradeTest2() {
+		
+		String[] allName={"周杰倫","李秉乾","曾琬婷"};
+		int[] allGrades={60,45,75};
+		HashMap<String, Integer> expected=new HashMap<>();
+		expected.put("周杰倫",60);
+		expected.put("李秉乾", 45);
+		expected.put("曾琬婷",75);
 
 		HashMap<String, Integer> actual=d.getAllStudentGrade(allName, allGrades);
 		assertEquals(expected, actual);
