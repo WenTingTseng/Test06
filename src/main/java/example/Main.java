@@ -49,6 +49,8 @@ public class Main {
 			case 3:
 				System.out.println("結束!");
 				break;
+			 default:
+				    break;
 			}
 			if(choice==3) {
 				break;
